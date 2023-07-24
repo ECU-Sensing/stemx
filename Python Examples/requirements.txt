@@ -1,0 +1,2 @@
+adafruit-circuitpython-seesaw
+adafruit-circuitpython-ltr390
