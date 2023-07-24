@@ -1,0 +1,3 @@
+adafruit-circuitpython-seesaw
+adafruit-circuitpython-ltr390
+pygame
