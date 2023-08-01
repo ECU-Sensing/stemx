@@ -9,7 +9,7 @@ Welcome to the 2023 StemX East Carolina University Hack-A-Thon! This year's chal
 
 In the first phase, each team will work with one StemX kit and the provided Image Capturing Machine Learning (ML) code. Your task is to modify this code to identify and count a chosen pantry item, and transmit the count over LoRa to our network, PITON. 
 
-The transmitted LoRa data must follow the data layout described in the DATA.md file provided in your team's folder. 
+The transmitted LoRa data must follow the data layout described in the [DATA.md](DATA.md) file provided in your team's folder. 
 
 Once you have completed your modifications and the Raspberry Pi is successfully transmitting data, commit your team's code to the Git repository. **DO NOT PUSH YOUR COMMIT TO THE REMOTE.** This is an important part of Phase 1 and points will be awarded for successful completion.
 
