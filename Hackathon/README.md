@@ -11,7 +11,7 @@ In the first phase, each team will work with one StemX kit and the provided Imag
 
 The transmitted LoRa data must follow the data layout described in the DATA.md file provided in your team's folder. 
 
-Once you have completed your modifications and the Raspberry Pi is successfully transmitting data, commit your team's code to the Git repository. This is an important part of Phase 1 and points will be awarded for successful completion.
+Once you have completed your modifications and the Raspberry Pi is successfully transmitting data, commit your team's code to the Git repository. **DO NOT PUSH YOUR COMMIT TO THE REMOTE.** This is an important part of Phase 1 and points will be awarded for successful completion.
 
 The majority of points in this phase will be awarded for the fastest time to capability — the quicker your team can get your system up and running, the more points you earn. Additional points will be awarded for code efficiency, thorough commenting, and creativity in your code. However, points will be deducted if not all team members contribute to the task. Everyone is expected to participate.
 

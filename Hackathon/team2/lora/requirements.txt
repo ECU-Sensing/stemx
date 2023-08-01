@@ -1,0 +1,7 @@
+LoRaPy
+pycrypto
+pynmea2
+schedule
+adafruit-circuitpython-gps
+func-timeout
+esdn-sensing
