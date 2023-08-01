@@ -4,12 +4,12 @@
 For the Hack-A-Thon, the data you collect and send via the LoRaWAN network must adhere to the following format:
 
 ```python
-{id, item_count, item_category}
+{featherid, piece_count, piece_category}
 ```
 
-- `id`: This should be a unique identifier for each Feather device used by your team. This will help identify which device the data is coming from.
-- `item_count`: This field should contain the count of the item category detected by your ML code.
-- `item_category`: This field should indicate the category of the item you are counting. Since you are counting pantry items, this could be 'can', 'box', etc., depending on the items you are identifying with your image capturing ML code.
+- `featherid`: This should be a unique identifier for each Feather device used by your team. This will help identify which device the data is coming from.
+- `piece_count`: This field should contain the count of the chess piece category detected by your ML code.
+- `piece_category`: This field should indicate the category of the chess piece you are counting. For instance, this could be 'pawn', 'queen', 'bishop', etc., depending on the pieces you are identifying with your image capturing ML code. ***Check the datasources on [Roboflow](https://universe.roboflow.com/joseph-nelson/chess-pieces-new) to see the categories available in the dataset.***
 
 
 
