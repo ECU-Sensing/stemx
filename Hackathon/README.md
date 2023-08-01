@@ -1,45 +1,66 @@
 ![CIEI](../images/ciei.jpg)
 # StemX East Carolina University Hack-A-Thon 2023
 
+Welcome to the 2023 StemX East Carolina University Hack-A-Thon! This year's challenge involves integrating image recognition and LoRaWAN technology. The Hack-A-Thon will be conducted in two phases, each scored by points.
+
 ## Challenge:
 
-The challenge for this year's Hack-A-Thon is to develop a system that utilizes image-capturing machine learning to identify specific items (preferably a certain animal) shown on camera within a sample window of 5 minutes. The system should then transmit the count of the identified items over LoRa to our network, PITON. Teams will be provided with a LoRa radio, prior code for data transmission, and a set of identifiers. The goal is to only transmit the counts of the identified item. The first team to successfully register their Raspberry Pi with the LoRaWAN network, capture the count, and transmit the count to PITON within the sample window will be declared the winner. A pre-generated dashboard will light up green when any data transmission is received, regardless of the correctness of the count.
+### Phase 1:
 
-Teams will be required to add their code to their specific group folder in the starter code GitHub repository and commit their changes back to the repository.
+In the first phase, each team will work with one StemX kit and the provided Image Capturing Machine Learning (ML) code. Your task is to modify this code to identify and count a chosen pantry item, and transmit the count over LoRa to our network, PITON. 
+
+The transmitted LoRa data must follow the data layout described in the DATA.md file provided in your team's folder. 
+
+Once you have completed your modifications and the Raspberry Pi is successfully transmitting data, commit your team's code to the Git repository. This is an important part of Phase 1 and points will be awarded for successful completion.
+
+The majority of points in this phase will be awarded for the fastest time to capability — the quicker your team can get your system up and running, the more points you earn. Additional points will be awarded for code efficiency, thorough commenting, and creativity in your code. However, points will be deducted if not all team members contribute to the task. Everyone is expected to participate.
+
+Points for Phase 1 will be scored before the start of Phase 2.
+
+### Phase 2:
+
+At the beginning of Phase 2, there will be additional time allotted to fix your script's accuracy if you rushed to completion in Phase 1.
+
+In the second phase, we will test the accuracy of your system's output. Points will be awarded based on how accurately your system can count the chosen pantry item in comparison to other teams.
+
+The team with the highest total points from both phases will be declared the winner!
 
 ## Format:
 
-The Hack-A-Thon will be conducted over several days, with specific start and end times provided to the teams at the kick-off event. The event will be a combination of in-person activities at the East Carolina University campus and remote collaboration. Teams will be composed of 5 to 6 members, with no more than 3 members from the same school district. Each team will present their project to a panel of judges, who will select the winning teams based on the successful completion of the challenge, the item chosen for identification, and the effectiveness of their implementation.
+- There will be a total of 4 teams: two teams with 3 members and two teams with 4 members.
+- Teams cannot have more than 3 members from the same school district.
+- Each team will be given one StemX kit to work with.
 
 ## Getting Started:
 
-All teams will receive a Hack-A-Thon kit during the kick-off event, which will include the LoRa radio, code for data transmission, and a set of identifiers. Teams are encouraged to familiarize themselves with these materials and begin brainstorming solutions.
-
-Start by reading through the starting documentation:
-- [LoRa Radio](RADIO.md)
-- [Software Setup](SOFTWARE.md)
+1. Each team will be given a folder containing the starter code.
+2. Review the provided resources and understand the structure of the starter code.
+3. Plan your approach and distribute tasks among team members.
+4. Modify the code in your team's folder to complete the challenge.
 
 ## When Complete:
 
-When your team has completed your project, you must submit your work by presenting it to the judges. You will need to demonstrate your project and explain your approach. Each team will also be given a time slot to present their project to the judges. Make sure your team is available for your assigned time slot.
+When you have finished modifying the code:
+
+1. Commit the changes to your team's folder in the Git repository. If needed, Git credentials can be provided upon request.
+2. Make sure your Raspberry Pi is registered with the LoRaWAN network and transmitting data.
+3. Check the PITON dashboard to confirm that your data is being received.
 
 ## Submission:
 
-Submissions should include the following:
+Each team is required to submit one set of code. Your submission will be the code in your team's folder in the Git repository and the data transmitted to the PITON network. 
 
-1. A demonstration of your project in action
-2. A brief summary of your project (no more than 500 words)
-3. Any necessary installation instructions or user guides
-4. The identifier of the chosen item for identification
-5. Link to your team's specific group folder in the GitHub repository
+The deadline for completing both phases and submitting your work will be provided by the event organizers.
 
 ## Resources:
 
-- [Instructional PowerPoint](#): A presentation providing an overview of the event and some tips for success, including information on how to train the model.
-- [StemX Website](#): The main source of information for the event. Here you will find updates, resources, and the submission portal.
-- [LoRa Radio Instructions](#): A guide on how to set up your LoRa radio and connect it to your Raspberry Pi
-- Mentors: We have a group of experienced mentors from various STEM fields available to assist teams throughout the Hack-A-Thon. You will be able to schedule a consultation with them through the StemX website.
+- [Instructional PowerPoint]()
+- [StemX Website]()
+- [Git Basics Guide]()
+- [LoRa Radio Hardware Installation Guide]()
+- [DATA.md file for data layout instructions]()
 
+Participants are encouraged to use any available resources, including the internet, to assist them in completing the challenge.
 
 #### We look forward to seeing the innovative solutions that our teams will create!
 

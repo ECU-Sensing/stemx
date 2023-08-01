@@ -1,8 +1,6 @@
 #!/usr/bin/env python3
 
-# btemperli, 14.2.2021
-# updated by Colby Sawyer 11.30.2021 (North American Support)
-
+# Import necessary libraries
 import sys
 import schedule
 from time import sleep
@@ -16,26 +14,31 @@ from LoRaWAN.MHDR import MHDR
 import reset_ada
 from data import get_data
 
+# Setup the BOARD
 BOARD.setup()
+# Argument Parser for LoRaWAN
 parser = LoRaArgumentParser("LoRaWAN sendReceive")
 
-#TODO: Add OLED support (Populated status messages, state, error checking)
-#TODO: Automate programmatically (allow for interval parameters, etc)
-
+# Class for LoRaWan System
 class LoRaWanSystem(LoRa):
+    # Initialize with device address, network key, application key
     def __init__(self, devaddr = [], nwkey = [], appkey = [], verbose = False):
         super(LoRaWanSystem, self).__init__(verbose)
         self.devaddr = devaddr
         self.nwkey = nwkey
         self.appkey = appkey
 
+    # Function executed when data is received
     def on_rx_done(self):
         print("RxDone")
 
+        # Clear the IRQ flags
         self.clear_irq_flags(RxDone=1)
+        # Read the payload
         payload = self.read_payload(nocheck=True)
         print("".join(format(x, '02x') for x in bytes(payload)))
 
+        # Decode the payload using LoRaWAN keys
         lorawan = LoRaWAN.new(keys.nwskey, keys.appskey)
         lorawan.read(payload)
         print(lorawan.get_mhdr().get_mversion())
@@ -47,11 +50,13 @@ class LoRaWanSystem(LoRa):
         print(raw_payload)
         print("\n")
 
+        # Put the module back to sleep and reset the RX pointer
         self.set_mode(MODE.SLEEP)
         self.reset_ptr_rx()
         self.set_mode(MODE.RXCONT)
         sys.exit(0)
 
+    # Function executed when data is transmitted
     def on_tx_done(self):
         self.clear_irq_flags(TxDone=1)
         print("TxDone\n")
@@ -65,6 +70,7 @@ class LoRaWanSystem(LoRa):
         sleep(45)
         sys.exit(0)
 
+    # Function to send data
     def do_send(self):
         lorawan = LoRaWAN.new(keys.nwskey, keys.appskey)
         lorawan.create(MHDR.UNCONF_DATA_UP, {'devaddr': keys.devaddr, 'fcnt': counter.get_current(), 'data': list(get_data())})
@@ -73,7 +79,6 @@ class LoRaWanSystem(LoRa):
         self.set_mode(MODE.TX)
         while True:
             sleep(1)
-
 
 # First: Send
 lora = LoRaWanSystem(False)
