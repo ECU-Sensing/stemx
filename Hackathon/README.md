@@ -54,11 +54,11 @@ The deadline for completing both phases and submitting your work will be provide
 
 ## Resources:
 
-- [Instructional PowerPoint]()
-- [StemX Website]()
-- [Git Basics Guide]()
-- [LoRa Radio Hardware Installation Guide]()
-- [DATA.md file for data layout instructions]()
+- [Instructional PowerPoint](https://studentsecuedu66932.sharepoint.com/:p:/r/sites/Funding/Shared%20Documents/General/STEMx-Proposal/Planning/Instruction/STEMx%20Classroom%20Presentation%20SKB%20updates.pptx?d=w48561c02fdc94bb88167919ebf53c84d&csf=1&web=1&e=6sADC6)
+- [StemX Website](https://dodstem.us/meet/)
+- [Git Basics Guide](https://git-scm.com/book/en/v2/Git-Basics-Getting-a-Git-Repository)
+- [LoRa Radio Hardware Installation Guide](RADIO.md)
+- [DATA.md file for data layout instructions](DATA.md)
 
 Participants are encouraged to use any available resources, including the internet, to assist them in completing the challenge.
 
