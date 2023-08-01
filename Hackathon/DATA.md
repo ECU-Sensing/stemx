@@ -4,14 +4,14 @@
 For the Hack-A-Thon, the data you collect and send via the LoRaWAN network must adhere to the following format:
 
 ```python
-{id, item_category, item_count}
+{id, item_count, item_category}
 ```
 
 - `id`: This should be a unique identifier for each Feather device used by your team. This will help identify which device the data is coming from.
-
+- `item_count`: This field should contain the count of the item category detected by your ML code.
 - `item_category`: This field should indicate the category of the item you are counting. Since you are counting pantry items, this could be 'can', 'box', etc., depending on the items you are identifying with your image capturing ML code.
 
-- `item_count`: This field should contain the count of the item category detected by your ML code.
+
 
 The data in this format should be prepackaged as a bytearray in the `get_data()` function in your `data.py` script.
 
