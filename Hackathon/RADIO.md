@@ -18,7 +18,7 @@
 
 5. **Checking the Connection**: Once the cable is connected, gently tug on it to make sure it's secure. It should move a little bit in a circular motion, but it shouldn't feel loose or fall off.
 
-Remember, take your time and be careful. You're dealing with delicate components and connections!
+`Remember, take your time and be careful. You're dealing with delicate components and connections!`
 
 
 <div style="display: flex; justify-content: space-between;">

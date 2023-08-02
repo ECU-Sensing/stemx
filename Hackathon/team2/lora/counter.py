@@ -1,6 +1,8 @@
 file_name = 'log_counter.txt'
 
 
+# Manages the count associate with each LoRa message. 
+
 def get_current():
     try:
         f = open(file_name, 'r')

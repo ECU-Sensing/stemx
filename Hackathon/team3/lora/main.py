@@ -73,6 +73,7 @@ class LoRaWanSystem(LoRa):
     # Function to send data
     def do_send(self):
         lorawan = LoRaWAN.new(keys.nwskey, keys.appskey)
+        # Does the get_data() look familiar?
         lorawan.create(MHDR.UNCONF_DATA_UP, {'devaddr': keys.devaddr, 'fcnt': counter.get_current(), 'data': list(get_data())})
 
         self.write_payload(lorawan.to_raw())

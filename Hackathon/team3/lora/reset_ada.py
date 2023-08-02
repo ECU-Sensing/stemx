@@ -2,6 +2,7 @@
 import RPi.GPIO as GPIO  
 import time
 
+##This code resets the LoRa Radio Bonnet
 
 def reset():
     RESET = 25

@@ -1,7 +1,7 @@
 ![CIEI](../images/ciei.jpg)
 # Software Installation and Setup:
 
-## Shim Main Driving Code Installation:
+## LoRa Main Driving Code Installation:
 
 Before starting the installation and setup, make sure you are logged into your Raspberry Pi. The driving code for the Hack-A-Thon will already be located in a folder labeled with your team name.
 
@@ -18,7 +18,7 @@ cd /path/to/Your_Team_Name
 Next, install the Python dependencies required to run the application. These dependencies are listed in a file called `requirements.txt` in your team's directory `lora` directory. We will use `pip3`, the Python package manager, to install these dependencies:
 
 ```bash
-sudo pip3 install -r requirements.txt
+sudo pip install -r requirements.txt
 ```
 
 ### Step 3: Verify Node Keys
