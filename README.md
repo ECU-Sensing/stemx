@@ -3,14 +3,14 @@
 
 ## Challenge:
 
-Your task is to use image capturing AI (Object Detection) to identify chess pieces shown on a camera. Your goal is to transmit the count of a specific type of chess piece to our network, PITON, using a LoRa radio. You will be given the LoRa radio, starter code for data transmission, and a set of identifiers. Your team will work to modify the existing code to perform the following tasks:
+Your task is to use image capturing AI (Object Detection) to specific items shown on a camera. Your goal is to transmit the count of a specific type of item to our network, PITON, using a LoRa radio. You will be given the LoRa radio, starter code for data transmission, and a set of identifiers. Your team will work to modify the existing code to perform the following tasks:
 
-1. Train the image capturing AI to identify and count a specific type of chess piece.
-2. Transmit the count of the identified chess piece over LoRa to the PITON network.
+1. Train the image capturing AI to identify and count a specific type of item.
+2. Transmit the count of the identified item over LoRa to the PITON network.
 
 The challenge is divided into two phases:
 
-**Phase 1:** Train a new model to identify chess pieces. Determine a good sampling window. Modify the provided starter code to train the image capturing AI, identify and count a specific chess piece (during sample window), and transmit the count over LoRa to the PITON network. Points will be awarded based on how quickly your team can accomplish this. ***You are required to commit your code in your teams hackathon folder before you are considered complete with Phase 1.***
+**Phase 1:** Train a new model to identify items. Determine a good sampling window. Modify the provided starter code to train the image capturing AI, identify and count a specific item (during sample window), and transmit the count over LoRa to the PITON network. Points will be awarded based on how quickly your team can accomplish this. ***You are required to commit your code in your teams hackathon folder before you are considered complete with Phase 1.***
 
 `We will hold a review between phases where teams will be given a short amount of time to review and correct their code before Phase 2`
 
@@ -26,7 +26,7 @@ Each team will consist of 3-4 members. We will distribute all necessary material
 
 You will be provided with a Raspberry Pi, a LoRa radio, and a set of identifiers (`keys.py`).You have been given starter code, which you will need to modify to train the Object Detection AI (`yolov7/detect.py`) and transmit data over LoRa. You will need to install the LoRa radio hat on the Raspberry Pi and connect it to the PITON network. 
 
-You may complete the tasks in any order that you choose. You have some experience with the Object Detection script as it is the same one that you used last week. You will now being enforcing a sample window instead of an infinite loop. The LoRa code is all new to you but you have been given starter code to help you get started. You may need to modify the code to transmit the count of a specific chess piece over LoRa to the PITON network. 
+You may complete the tasks in any order that you choose. You have some experience with the Object Detection script as it is the same one that you used last week. You will now being enforcing a sample window instead of an infinite loop. The LoRa code is all new to you but you have been given starter code to help you get started. You may need to modify the code to transmit the count of a specific item over LoRa to the PITON network. 
 
 `It is important to review each file and understand what is happening before makes changes.`
 
