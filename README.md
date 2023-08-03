@@ -35,7 +35,7 @@ You may complete the tasks in any order that you choose. You have some experienc
 #### Recommended Order (Phase 1):
     1. Read all .md Markdown files
     2. Review ClassroomPresentation PDF
-    3. Train your model (Chess Pieces****.zip)
+    3. ***SKIP THS STEP*** Train your model (Chess Pieces****.zip)
     4. Modify the Object Detection Code
     5. Setup LoRa Radio and Code
     6. Modify the LoRa Code
