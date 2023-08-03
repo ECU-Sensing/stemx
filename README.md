@@ -33,15 +33,43 @@ You may complete the tasks in any order that you choose. You have some experienc
 **YOU MUST** adhere to the [Data Formatting Guidelines](hackathon/DATA.md) to get full points!
 
 #### Recommended Order (Phase 1):
-    1. Read all .md Markdown files
-    2. Review ClassroomPresentation PDF
-    3. ***SKIP THS STEP*** Train your model (Chess Pieces****.zip)
-    4. Modify the Object Detection Code
-    5. Setup LoRa Radio and Code
-    6. Modify the LoRa Code
-    7. Transmit your data to PITON
-        "Hint": To run the LoRa code (transmit) you need to run: `python3 main.py`
-    8. Commit Code with Git
+1. Read all `.md` Markdown files
+2. Review ClassroomPresentation PDF
+3. ***SKIP THS STEP*** Train your model (Chess Pieces****.zip)
+4. Modify the Object Detection Code
+  4.1 Inside of the `/home/pi/yolov7` directory modify the `detect.py` to find counts of your specific class (store this in variables or a list and TEST (print the variable or list))
+    - remember `names[int(c)]` shows the class that is in index c. You can figure out if that value is equal to your class with a simple `if` where you
+  4.2 Copy that code into the data.py file in the top of the get_data() function 
+  4.3 Think about the parameters we passed into the detect.py file with the command `python3 detect.py --weights yolov7.pt --source 0`. When you copy and paste that code you will also have to somehow trick it into thinking those parameters were passed so before that part of the code runs you need to add the following:
+      - Set the variable `weights` = `['yolov7.pt']`
+      - Set the variable `source` = `'0'`
+      - Set the variable `image_size` = `640`
+      - Set the variable `conf_thres` = `0.25`
+      - Set the variable `iou_thres` = `0.45`
+      - Set the variable `device` = `''`
+      - Set the variable `view_img` = `False`
+      - Set the variable `save_txt` = `False`
+      - Set the variable `save_conf` = `False`
+      - Set the variable `nosave` = `False`
+      - Set the variable `classes` = `None`
+      - Set the variable `agnostic_nms` = `False`
+      - Set the variable `augment` = `False`
+      - Set the variable `update` = `False`
+      - Set the variable `project` = `'runs/detect'`
+      - Set the variable `name` = `'exp'`
+      - Set the variable `exist_ok` = `False`
+      - Set the variable `no_trace` = `False`
+  4.4 Copy the other files inside of the `yolov7` into the `lora` folder
+  4.5 Set your interval by changing the loop from **infinite** to set a sample window 
+  4.6 Take your variable or list (after the sample time window) and encode it into a `bytearray`
+5. Setup LoRa Radio and Code
+  5.1 Follow `RADIO.md` and `SOFTWARE.md`
+6. Modify the LoRa Code
+  6.1 You **MAY** have to make changes to this file. Read the comments
+  6.2 When the `main.py` runs it will wait for the `get_data()` function to be done before its transmits (aka you dont have to set the time interval again)
+7. Transmit your data to PITON
+    7.1 To run the LoRa code (transmit) you need to run: `python3 main.py`
+8. Commit Code with Git
 
 ## When Complete:
 
