@@ -68,7 +68,7 @@ def detect(classifier, save_img=False):
     t0 = time.time()
 
     #Initialize count
-    count = 0
+    #count = 0
 
     for path, img, im0s, vid_cap in dataset:
         img = torch.from_numpy(img).to(device)

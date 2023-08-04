@@ -68,7 +68,7 @@ def detect(classifier, save_img=False):
     t0 = time.time()
 
     #Initialize count
-    count = 0
+    #count = 0
 
     for path, img, im0s, vid_cap in dataset:
         img = torch.from_numpy(img).to(device)
@@ -126,7 +126,7 @@ def detect(classifier, save_img=False):
                     #    count += n
 
                 #Check if x minutes have passed, if so, break the loop
-                # TODO: Once your sample window is over, you can return to break the loop and return the count. What is the condition??
+                # TODO: Once your sample window is over, you can return the count. What is the condition??
                 if False:
                     # After breaking the loop, close the window and cleanup the vid_cap
                     cv2.destroyAllWindows()
