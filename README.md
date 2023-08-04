@@ -20,11 +20,11 @@ The winner of the Hack-A-Thon will be the team with the highest total points fro
 
 ## Format:
 
-Each team will consist of 3-4 members. We will distribute all necessary materials.
+Each team will consist of 3. We will distribute all necessary materials.
 
 ## Getting Started:
 
-You will be provided with a Raspberry Pi, a LoRa radio, and a set of identifiers (`keys.py`).You have been given starter code, which you will need to modify to train the Object Detection AI (`yolov7/detect.py`) and transmit data over LoRa. You will need to install the LoRa radio hat on the Raspberry Pi and connect it to the PITON network. 
+You will be provided with a Raspberry Pi, a LoRa radio, and a set of identifiers (`keys.py`).You have been given starter code, which you will need to modify to train the Object Detection AI (`detect.py`) and transmit data over LoRa. You will need to install the LoRa radio hat on the Raspberry Pi and connect it to the PITON network. 
 
 You may complete the tasks in any order that you choose. You have some experience with the Object Detection script as it is the same one that you used last week. You will now being enforcing a sample window instead of an infinite loop. The LoRa code is all new to you but you have been given starter code to help you get started. You may need to modify the code to transmit the count of a specific item over LoRa to the PITON network. 
 
@@ -35,45 +35,20 @@ You may complete the tasks in any order that you choose. You have some experienc
 #### Recommended Order (Phase 1):
 1. Read all `.md` Markdown files
 2. Review ClassroomPresentation PDF
-3. ***SKIP THS STEP*** Train your model (Chess Pieces****.zip)
-4. Modify the Object Detection Code
-  4.1 Inside of the `/home/pi/yolov7` directory modify the `detect.py` to find counts of your specific class (store this in variables or a list and TEST (print the variable or list))
-    - remember `names[int(c)]` shows the class that is in index c. You can figure out if that value is equal to your class with a simple `if` where you
-  4.2 Copy that code into the data.py file in the top of the get_data() function 
-  4.3 Think about the parameters we passed into the detect.py file with the command `python3 detect.py --weights yolov7.pt --source 0`. When you copy and paste that code you will also have to somehow trick it into thinking those parameters were passed so before that part of the code runs you need to add the following:
-      - Set the variable `weights` = `['yolov7.pt']`
-      - Set the variable `source` = `'0'`
-      - Set the variable `image_size` = `640`
-      - Set the variable `conf_thres` = `0.25`
-      - Set the variable `iou_thres` = `0.45`
-      - Set the variable `device` = `''`
-      - Set the variable `view_img` = `False`
-      - Set the variable `save_txt` = `False`
-      - Set the variable `save_conf` = `False`
-      - Set the variable `nosave` = `False`
-      - Set the variable `classes` = `None`
-      - Set the variable `agnostic_nms` = `False`
-      - Set the variable `augment` = `False`
-      - Set the variable `update` = `False`
-      - Set the variable `project` = `'runs/detect'`
-      - Set the variable `name` = `'exp'`
-      - Set the variable `exist_ok` = `False`
-      - Set the variable `no_trace` = `False`
-  4.4 Copy the other files inside of the `yolov7` into the `lora` folder
-  4.5 Set your interval by changing the loop from **infinite** to set a sample window 
-  4.6 Take your variable or list (after the sample time window) and encode it into a `bytearray`
-5. Setup LoRa Radio and Code
+3. Modify the Object Detection Code `detect.py`
+   3.1. Find where you should be printing results and consider how you will use that to check for your class. **Hint:** We covered this yesterday `names[int(c)]` will return the class string for each object it sees. So `if` it sees a bird `names[int(c)] == 'bird'` will be true.
+   3.2. You are given an example of how to use `time.time()` to get the current time. You can use the `break` statement to exit a loop (look at `break.py` to see an example). Use those two tools to exit that detection loop after your sampling window is complete. **Hint:** `If` i run `time1=time.time()` and wait 30 minutes and run it again `time2=time.time()` again. What do you think `time1 - time2` will equal?
+   3.2. **BEFORE** you try to run the detect.py you must search through those `import` statements and make sure you have all the necessary supporting directories in the same location. **Hint:** Look at the folder names currently in `/home/pi/yolov7` and see if any match your `from` or `import` statements . You can copy the ones you want right where you will need them.
+4. Setup LoRa Radio and Code
   5.1 Follow `RADIO.md` and `SOFTWARE.md`
-6. Modify the LoRa Code
-  6.1 You **MAY** have to make changes to this file. Read the comments
-  6.2 When the `main.py` runs it will wait for the `get_data()` function to be done before its transmits (aka you dont have to set the time interval again)
-7. Transmit your data to PITON
+5. Modify the `data.py` file to make sure you are transmitting your data the correct way. Check `DATA.md`
+6. Transmit your data to PITON
     7.1 To run the LoRa code (transmit) you need to run: `python3 main.py`
-8. Commit Code with Git
+7. Commit Code with Git
 
 ## When Complete:
 
-Once your team has successfully trained your Object Detection model, identified and counted a specific chess piece, and transmitted the count to the PITON network, you have completed Phase 1 of the challenge. You will then be given a new set of instructions to test the accuracy of your model for Phase 2.
+Once your team has successfully identified and counted a specific item, and transmitted the count to the PITON network, you have completed Phase 1 of the challenge. You will then be given a new set of instructions to test the accuracy of your model for Phase 2.
 
  **Phase 2 will being for everyone at the same time.** You will have a short amount of time to review and correct your code before Phase 2 begins.
 

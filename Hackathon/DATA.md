@@ -4,7 +4,7 @@
 For the Hack-A-Thon, the data you collect and send via the LoRaWAN network must adhere to the following format:
 
 ```python
-{featherid, piece_count, piece_category}
+[featherid, piece_count, piece_category]
 ```
 
 - `featherid`: This should be a unique identifier for each Feather device used by your team. This will help identify which device the data is coming from.
